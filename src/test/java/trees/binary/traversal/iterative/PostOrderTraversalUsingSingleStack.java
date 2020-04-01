@@ -24,16 +24,16 @@ public class PostOrderTraversalUsingSingleStack {
         s.push(root);
 
         while (!s.empty()) {
-            BinaryTreeNode current = s.peek();
+            BinaryTreeNode current = s.peek(); //Important: Peeking here not poping
             if (prev == null || (prev.getLeft() == current || prev.getRight() == current)) { // We are going down in tree
                 if (current.getLeft() != null)
                     s.push(current.getLeft()); // Left subtree first,if it doesnt exists then right subtree
                 else if (current.getRight() != null) s.push(current.getRight());
             } else if (prev == current.getLeft()) { //moving up from left subtree
                 if (current.getRight() != null) s.push(current.getRight());
-            } else { //moving up from right subtree
+            } else { //moving up from right subtree or reached leftmost leaf
+                current = s.pop();
                 System.out.println(current.getData());
-                s.pop();
             }
 
             prev = current;
