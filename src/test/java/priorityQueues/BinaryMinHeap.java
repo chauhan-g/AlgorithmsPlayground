@@ -120,13 +120,15 @@ public class BinaryMinHeap {
      *
      * @param array
      */
-    public void buildHeap(int[] array) {
+    public BinaryMinHeap buildHeap(int[] array) {
         this.capacity = this.count = array.length;
         this.heapArray = array;
 
         for (int index = (count - 1) / 2; index >= 0; index--) {
             bubbleDown(index);
         }
+
+        return this;
     }
 
     public void destroy() {
