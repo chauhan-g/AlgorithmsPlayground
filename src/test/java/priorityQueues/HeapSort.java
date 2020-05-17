@@ -3,6 +3,7 @@ package priorityQueues;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+//TODO: do the same when comitting the sorting algorithms
 public class HeapSort {
 
     public int[] sort(int[] array) {
