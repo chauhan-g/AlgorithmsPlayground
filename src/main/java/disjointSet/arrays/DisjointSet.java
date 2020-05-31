@@ -1,4 +1,4 @@
-package graphs.disjointSet.arrays;
+package disjointSet.arrays;
 
 
 public class DisjointSet {

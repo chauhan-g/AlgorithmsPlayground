@@ -1,4 +1,4 @@
-package graphs.disjointSet.dynamic;
+package disjointSet.dynamic;
 
 public class Vertex {
     private int data;
