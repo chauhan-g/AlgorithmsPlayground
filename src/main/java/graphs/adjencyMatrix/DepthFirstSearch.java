@@ -1,37 +1,34 @@
-package graphs.adjencyList;
+package graphs.adjencyMatrix;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
+import java.util.Stack;
 
-public class BreadthFirstSearch {
-    public List<Integer> getBFS(Graph graph) {
+public class DepthFirstSearch {
+    public List<Integer> getDFS(Graph graph) {
         int n = graph.noOfVertexes;
         boolean[][] adjMatrix = graph.adjMatrix;
         boolean[] visited = new boolean[n];
-        Queue<Integer> queue = new LinkedList<>();
-        LinkedList<Integer> bfs = new LinkedList();
+        Stack<Integer> stack = new Stack<>();
+        LinkedList<Integer> dfs = new LinkedList();
 
-        queue.offer(0);
+        stack.push(0);
 
-        while (!queue.isEmpty()) {
-            int size = queue.size();
+        while (!stack.isEmpty()) {
+            int current = stack.pop();
 
-            while (size-- > 0) {
-                int current = queue.poll();
-                bfs.add(current);
-                visited[current] = true;
+            dfs.add(current);
+            visited[current] = true;
 
-                for (int j = 0; j < n; j++) {
+            for (int j = 0; j < n; j++) {
 
-                    if (visited[j] == false && adjMatrix[current][j] == true) {
-                        queue.offer(j);
-                    }
+                if (visited[j] == false && adjMatrix[current][j] == true) {
+                    stack.push(j);
                 }
             }
         }
 
-        return bfs;
+        return dfs;
     }
 
     public static void main(String[] args) {
@@ -67,6 +64,6 @@ public class BreadthFirstSearch {
 //        g.addEdge(2, 5);
 //        g.addEdge(5, 6);
 
-        new BreadthFirstSearch().getBFS(g).forEach(System.out::println);
+        new DepthFirstSearch().getDFS(g).forEach(System.out::println);
     }
 }

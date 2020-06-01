@@ -1,4 +1,4 @@
-package graphs.adjencyList;
+package graphs.adjencyMatrix;
 
 //TODO: Use vertex class to represent Vertexes as given in book Data Structures made easy in Java.
 public class Graph {
