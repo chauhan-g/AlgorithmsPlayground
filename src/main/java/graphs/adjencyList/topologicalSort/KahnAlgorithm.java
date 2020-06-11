@@ -36,6 +36,7 @@ public class KahnAlgorithm {
         LinkedList<Integer> topologicalSort = new LinkedList<>();
         LinkedList<Integer> queue = new LinkedList<>();//important:using queue for processing.Also,no visited array required.
 
+        //Important:First insert all the vertexes having indegree 0.Most corner cases covered with this step.
         for (int i = 0; i < V; i++) {
             if (indegree[i] == 0) {
                 queue.offer(i);
@@ -75,13 +76,23 @@ public class KahnAlgorithm {
 //                   3
 
 
-        KahnAlgorithm g = new KahnAlgorithm(6);
-        g.addEdge(5, 2);
-        g.addEdge(5, 0);
+//        KahnAlgorithm g = new KahnAlgorithm(6);
+//        g.addEdge(5, 2);
+//        g.addEdge(5, 0);
+//        g.addEdge(4, 0);
+//        g.addEdge(4, 1);
+//        g.addEdge(2, 3);
+//        g.addEdge(3, 1);
+
+        KahnAlgorithm g = new KahnAlgorithm(5);
         g.addEdge(4, 0);
+        g.addEdge(4, 2);
         g.addEdge(4, 1);
+        g.addEdge(0, 1);
+        g.addEdge(2, 1);
+        g.addEdge(0, 3);
         g.addEdge(2, 3);
-        g.addEdge(3, 1);
+
 
         //Important: look at the wiki for another graph example.
         //Important: look at the wiki for another graph example.
