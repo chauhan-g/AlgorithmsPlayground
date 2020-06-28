@@ -6,6 +6,12 @@ public class SlidingWindowMaximum {
     //Important: this is required to keep track of index and delete the element from pq based on indexing
     class Element {
         private int value;
+        private int index;
+
+        public Element(int value, int index) {
+            this.value = value;
+            this.index = index;
+        }
 
         public int getValue() {
             return value;
@@ -36,13 +42,6 @@ public class SlidingWindowMaximum {
         }
 
         public void setIndex(int index) {
-            this.index = index;
-        }
-
-        private int index;
-
-        public Element(int value, int index) {
-            this.value = value;
             this.index = index;
         }
     }
