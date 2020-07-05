@@ -2,6 +2,7 @@ package graphs.adjencyList.mst;
 
 import java.util.*;
 
+//TODO: Practise again and add Important Comments.
 public class PrimsAlgorithm {
     private static class DestinationVertex {
         int destination;
@@ -82,7 +83,7 @@ public class PrimsAlgorithm {
                     if (destinationVertex.weight < pqVertices[destinationVertex.destination].key) {
                         pq.remove(pqVertices[destinationVertex.destination]);
                         pq.add(new PQVertex(destinationVertex.destination, destinationVertex.weight));
-                        pqVertices[destinationVertex.destination].key=destinationVertex.weight;
+                        pqVertices[destinationVertex.destination].key = destinationVertex.weight;
                         parent[destinationVertex.destination] = currentVertex.vertex;
                     }
                 }
@@ -90,7 +91,7 @@ public class PrimsAlgorithm {
         }
 
         // Prints the vertex pair of mst
-        for (int o = 0; o < graph.vertexes; o++)
+        for (int o = 1; o < graph.vertexes; o++)
             System.out.println(parent[o] + " "
                     + "-"
                     + " " + o);

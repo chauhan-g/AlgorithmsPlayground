@@ -61,6 +61,7 @@ public class BinaryMinHeap {
         if (-1 != rightChildIndex && heapArray[rightChildIndex] < heapArray[min]) min = rightChildIndex;
 
         if (min != index) {
+            //(IMPORTANT): Swap
             int temp = heapArray[index];
             heapArray[index] = heapArray[min];
             heapArray[min] = temp;
@@ -113,6 +114,7 @@ public class BinaryMinHeap {
     }
 
     /***
+     * Important:
      * Heapifying the array.
      * The elements form N/2 to N-1 are leaf nodes and each node is a 1 element heap.So we dont need to heapify them.
      *
