@@ -194,7 +194,7 @@ public class BinaryHeap {
 //
 //        Arrays.stream(heap.heapArray).forEach(System.out::println);
 
-        int[] array = {5, 6, 1, 4, 2, 3, 7,11,15,99,20};
+        int[] array = {5, 6, 1, 4, 2, 3, 7, 11, 15, 99, 20};
 
         Arrays.stream(new BinaryHeap().heapSort(array)).forEach(System.out::println);
     }
