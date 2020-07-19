@@ -5,17 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class KruskalsAlgorithm {
-    int vertexes;
-    Edge[] edges;
-
-    KruskalsAlgorithm(int vertexes, int edges) {
-        this.vertexes = vertexes;
-        this.edges = new Edge[edges];
-
-        for (int i = 0; i < edges; ++i)
-            this.edges[i] = new Edge();
-    }
-
+    //Important: see the Vertex class not used for source and destination because the same task can be done by subset class.
+    // We just use int as source and destination to keep it simple.
     private class Edge implements Comparable<Edge> {
         int source, destination, weight;
 
@@ -29,6 +20,17 @@ public class KruskalsAlgorithm {
     //Important : Represent the set.Used for keeping track of which vertex belongs to which set.Uses rank for Union by rank.
     private class Subset {
         int parent, rank;
+    }
+
+    int vertexes;
+    Edge[] edges;
+
+    KruskalsAlgorithm(int vertexes, int edges) {
+        this.vertexes = vertexes;
+        this.edges = new Edge[edges];
+
+        for (int i = 0; i < edges; ++i)
+            this.edges[i] = new Edge();
     }
 
     void addEdge(int source, int destination, int weight) {

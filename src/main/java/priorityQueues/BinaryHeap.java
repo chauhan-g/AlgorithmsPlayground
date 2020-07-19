@@ -2,6 +2,8 @@ package priorityQueues;
 
 import java.util.Arrays;
 
+//TODO(LATER)
+//TODO: include heap type and do both max and min heap in same.
 public class BinaryHeap {
     public int[] heapArray;
     public int capacity; // size of heap

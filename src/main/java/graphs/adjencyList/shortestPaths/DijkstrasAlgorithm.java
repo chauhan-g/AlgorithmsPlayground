@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.TreeSet;
 
 //TODO: Practise again and add Important Comments.
+//TODO: add parent array to know the path as well.
 public class DijkstrasAlgorithm {
     private static class Graph {
         int vertexes;
@@ -62,7 +63,7 @@ public class DijkstrasAlgorithm {
         }
     }
 
-    static void shortestPath(Graph g) {
+    static void singleSourceShortestPath(Graph g) {
         int[] distance = new int[g.vertexes]; //used for storing the result,i.e actual distance.
         boolean[] inSPT = new boolean[g.vertexes]; ////Important :to check if vertex is already included in shortest path traversed.
         PQVertex[] pqVertices = new PQVertex[g.vertexes]; //Important : used for update(add/ remove) keys in PQ
@@ -87,7 +88,7 @@ public class DijkstrasAlgorithm {
 
             for (Vertex destination : g.adjList[currentVertex.vertex]) {
 
-                if (!inSPT[destination.vertex]) {
+                if (!inSPT[destination.vertex]) {//Important
                     //Important : (Integer.MAX_VALUE - destination.vertex)Hack Treeset does not allow same weight of MAX value
                     //Important : destination.weight + distance[currentVertex.vertex] < distance[destination.vertex]...distance array is used,not PQVertices
                     if (Integer.MAX_VALUE - destination.vertex != distance[destination.vertex] &&
@@ -133,6 +134,6 @@ public class DijkstrasAlgorithm {
         graph.addEdge(6, 8, 6);
         graph.addEdge(7, 8, 7);
 
-        shortestPath(graph);
+        singleSourceShortestPath(graph);
     }
 }
