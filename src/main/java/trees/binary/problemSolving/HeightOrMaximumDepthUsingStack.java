@@ -8,7 +8,7 @@ public class HeightOrMaximumDepthUsingStack {
 
     /***
      * In recursion we are doing postorder traversal.So,in itererative mode,
-     * we will again do the preorder traversal using stack and keep checking the size of stack.
+     * we will again do the postorder traversal using stack and keep checking the size of stack.
      *
      * @param current the root of the node.
      * @return the height or the maximum depth of binary tree.

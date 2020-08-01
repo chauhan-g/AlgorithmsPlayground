@@ -46,7 +46,7 @@ public class KahnAlgorithm {
         while (!queue.isEmpty()) {
             int currentVertex = queue.poll();
             topologicalSort.add(currentVertex);
-            vertexProcessed++;
+            vertexProcessed++; //Important : for checking the graph cycle.
 
             for (int adjVertex : adj.get(currentVertex)) {
                 if (--indegree[adjVertex] == 0) {//Important: decrease the indegree of adj vertexes and add to queue if 0.Check the changing indegree with Debug.
@@ -55,6 +55,7 @@ public class KahnAlgorithm {
             }
         }
 
+        //Important: This is same as detecting a cycle in Directed graph using BFS.
         if (vertexProcessed != V) {
             System.out.println("Graph contains a cycle");
             return Collections.emptyList();
