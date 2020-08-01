@@ -3,7 +3,7 @@ package graphs.adjencyList.dfsApplications;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CutBridges {
+public class CutEdgesOrCutBridges {
     static class Graph {
         private int V; // No. of vertices
         private List<Integer> adj[];
@@ -88,7 +88,7 @@ public class CutBridges {
         g1.addEdge(2, 1);
         g1.addEdge(0, 3);
         g1.addEdge(3, 4);
-        new CutBridges().cutBridges(g1);
+        new CutEdgesOrCutBridges().cutBridges(g1);
         System.out.println();
 
         System.out.println("Bridges in Second graph");
@@ -96,7 +96,7 @@ public class CutBridges {
         g2.addEdge(0, 1);
         g2.addEdge(1, 2);
         g2.addEdge(2, 3);
-        new CutBridges().cutBridges(g2);
+        new CutEdgesOrCutBridges().cutBridges(g2);
         System.out.println();
 
         System.out.println("Bridges in Third graph ");
@@ -109,6 +109,6 @@ public class CutBridges {
         g3.addEdge(1, 6);
         g3.addEdge(3, 5);
         g3.addEdge(4, 5);
-        new CutBridges().cutBridges(g2);
+        new CutEdgesOrCutBridges().cutBridges(g2);
     }
 }
